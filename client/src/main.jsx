@@ -6,7 +6,10 @@ import App from './App.jsx'
 import { AppProvider } from './contexts/AppContext.jsx'
 import './index.css'
 
-// Setup global Axios interceptors for automated session expiration checks
+// Setup global Axios base URL and interceptors for automated session expiration checks
+const API_URL = import.meta.env.VITE_API_BASE_URL || '';
+axios.defaults.baseURL = API_URL;
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
