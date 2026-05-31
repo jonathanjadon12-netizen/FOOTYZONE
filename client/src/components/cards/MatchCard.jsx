@@ -15,8 +15,12 @@ function MatchCard({ match }) {
     >
       {/* Static Default Backdrop Poster */}
       <img 
-        src={match.poster} 
+        src={match.poster || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop'} 
         alt={match.title}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop';
+        }}
         className="w-full h-full object-cover rounded-lg"
       />
 

@@ -228,8 +228,12 @@ function AdminVideos() {
                 {/* Visual cover card */}
                 <div className="relative aspect-video bg-black overflow-hidden select-none">
                   <img
-                    src={video.thumbnail}
+                    src={video.thumbnail || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop'}
                     alt={video.title}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-60" />

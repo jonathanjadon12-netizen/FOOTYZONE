@@ -89,8 +89,12 @@ function Details() {
       {/* 1. Backdrop Banner Banner */}
       <div className="relative h-[45vh] sm:h-[60vh] w-full">
         <img 
-          src={content.banner} 
+          src={content.banner || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop'} 
           alt={content.title} 
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop';
+          }}
           className="w-full h-full object-cover select-none pointer-events-none"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F7F4EF] via-[#F7F4EF]/60 to-transparent" />
@@ -104,8 +108,12 @@ function Details() {
           {/* Left Poster card */}
           <div className="hidden md:block">
             <img 
-              src={content.poster} 
+              src={content.poster || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop'} 
               alt={content.title} 
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop';
+              }}
               className="w-full rounded-2xl border border-stone-200 shadow-2xl select-none pointer-events-none"
             />
           </div>
@@ -184,8 +192,12 @@ function Details() {
                   className="flex gap-4 p-3 bg-white/70 rounded-2xl hover:bg-stone-100 cursor-pointer transition-all border border-stone-200 hover:border-stone-350 shadow-sm group"
                 >
                   <img 
-                    src={ep.thumbnail} 
+                    src={ep.thumbnail || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop'} 
                     alt={ep.title} 
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop';
+                    }}
                     className="w-32 h-20 object-cover rounded-lg shrink-0 border border-stone-200/60"
                   />
                   <div>

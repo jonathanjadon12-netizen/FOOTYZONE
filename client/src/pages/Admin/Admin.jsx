@@ -379,7 +379,15 @@ function Admin() {
                     {filteredMatches.map((m) => (
                       <tr key={m._id} className="hover:bg-stone-50/50 transition-colors">
                         <td className="py-3.5">
-                          <img src={m.poster} alt={m.title} className="w-10 h-14 object-cover rounded-md border border-stone-200 shadow-sm" />
+                          <img 
+                            src={m.poster || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop'} 
+                            alt={m.title} 
+                            onError={(e) => {
+                              e.target.onerror = null;
+                              e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop';
+                            }}
+                            className="w-10 h-14 object-cover rounded-md border border-stone-200 shadow-sm" 
+                          />
                         </td>
                         <td className="py-3.5 pr-4">
                           <div className="font-black text-stone-900 truncate max-w-xs">{m.title}</div>

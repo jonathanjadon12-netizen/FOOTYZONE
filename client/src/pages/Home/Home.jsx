@@ -113,8 +113,12 @@ function Home() {
                 />
               ) : (
                 <img 
-                  src={heroMovie.banner} 
+                  src={heroMovie.banner || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop'} 
                   alt={heroMovie.title} 
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop';
+                  }}
                   className="w-full h-full object-cover"
                 />
               )}
