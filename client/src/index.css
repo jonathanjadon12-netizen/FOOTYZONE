@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #F7F4EF;
+  --bg-secondary: #EFECE5;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --text-primary: #231F1D;
+  --text-secondary: #57534E;
+  --border-color: rgba(35, 31, 29, 0.07);
+  --hero-overlay-1: linear-gradient(to top, #F7F4EF 0%, rgba(247, 244, 239, 0.7) 45%, rgba(247, 244, 239, 0.1) 85%, transparent 100%);
+  --hero-overlay-2: linear-gradient(to right, #F7F4EF 0%, rgba(247, 244, 239, 0.8) 35%, rgba(247, 244, 239, 0.2) 75%, transparent 100%);
+  --accent-color: #C84B31;
+  --accent-hover: #A83D27;
+  --scrollbar-track: rgba(247, 244, 239, 0.5);
+  --skeleton-start: rgba(239, 236, 229, 0.6);
+  --skeleton-mid: rgba(225, 220, 210, 0.8);
+}
+
+.dark {
+  --bg-primary: #0C0B0A;
+  --bg-secondary: #171513;
+  --bg-card: rgba(28, 26, 24, 0.85);
+  --text-primary: #F3F0EA;
+  --text-secondary: #A39E93;
+  --border-color: rgba(247, 244, 239, 0.08);
+  --hero-overlay-1: linear-gradient(to top, #0C0B0A 0%, rgba(12, 11, 10, 0.7) 45%, rgba(12, 11, 10, 0.1) 85%, transparent 100%);
+  --hero-overlay-2: linear-gradient(to right, #0C0B0A 0%, rgba(12, 11, 10, 0.8) 35%, rgba(12, 11, 10, 0.2) 75%, transparent 100%);
+  --accent-color: #E25E42;
+  --accent-hover: #F2785D;
+  --scrollbar-track: rgba(12, 11, 10, 0.5);
+  --skeleton-start: rgba(28, 26, 24, 0.6);
+  --skeleton-mid: rgba(45, 41, 38, 0.8);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom Premium Horizontal Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(200, 75, 49, 0.3);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 75, 49, 0.6);
+}
+
+/* Clean, Premium Warm-White Glassmorphic Panels */
+.glass-panel {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(200, 75, 49, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(200, 75, 49, 0.12);
+}
+
+/* Terracotta Neon/Soft Glow Elements */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(200, 75, 49, 0.4), 0 0 20px rgba(200, 75, 49, 0.2);
+}
+
+.box-glow {
+  box-shadow: 0 0 15px rgba(200, 75, 49, 0.15);
+}
+
+/* Warm Beige Gradient Overlays for Hero Banners */
+.hero-gradient-overlay {
+  background: var(--hero-overlay-1) !important;
+}
+
+.hero-left-gradient-overlay {
+  background: var(--hero-overlay-2) !important;
+}
+
+/* Skeleton Loading Animation Pulse (Beige Style) */
+@keyframes skeleton-loading {
+  0% {
+    background-color: var(--skeleton-start);
+  }
+  50% {
+    background-color: var(--skeleton-mid);
+  }
+  100% {
+    background-color: var(--skeleton-start);
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+/* Scanner animation for QR Payments (Terracotta Style) */
+@keyframes scan-animation {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.scanline {
+  animation: scan-animation 2.5s ease-in-out infinite;
+}
+
+/* Dynamic Dark Mode Decorator classes to override hardcoded Tailwind base specs */
+.dark .bg-\[\#F7F4EF\] {
+  background-color: var(--bg-primary) !important;
+}
+.dark .text-\[\#231F1D\] {
+  color: var(--text-primary) !important;
+}
+.dark .bg-white\/70,
+.dark .bg-white\/50,
+.dark .bg-white\/75,
+.dark .bg-white {
+  background-color: var(--bg-card) !important;
+}
+.dark .text-stone-900,
+.dark .text-stone-950,
+.dark .text-stone-850,
+.dark .text-stone-800 {
+  color: var(--text-primary) !important;
+}
+.dark .text-stone-700,
+.dark .text-stone-600,
+.dark .text-stone-500 {
+  color: var(--text-secondary) !important;
+}
+.dark .border-stone-200,
+.dark .border-stone-300,
+.dark .border-stone-200\/60,
+.dark .border-stone-300\/65 {
+  border-color: var(--border-color) !important;
+}
+.dark .bg-\[\#EFECE5\] {
+  background-color: var(--bg-secondary) !important;
+}
+.dark .bg-stone-100,
+.dark .bg-stone-150,
+.dark .bg-stone-100\/50,
+.dark .bg-stone-200\/40,
+.dark .bg-stone-200\/50 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark input[type="text"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark select,
+.dark textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
