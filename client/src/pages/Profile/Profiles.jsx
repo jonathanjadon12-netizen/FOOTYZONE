@@ -5,21 +5,38 @@ import { Plus, Trash2, Smile, Lock, HelpCircle, X } from 'lucide-react';
 
 const AVATAR_OPTIONS = [
   {
-    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Felix'
+    url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop'
   },
   {
-    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka'
+    url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop'
   },
   {
-    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jack'
+    url: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop'
   },
   {
-    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Milo'
+    url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop'
   },
   {
-    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luna'
+    url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop'
   }
 ];
+
+const getInitialsAvatar = (name) => {
+  const firstLetter = (name || 'U').charAt(0).toUpperCase();
+  const colors = ['#E25E42', '#C84B31', '#2C3E50', '#18BC9C', '#3498DB', '#9B59B6', '#F1C40F'];
+  let charCodeSum = 0;
+  const str = name || 'User';
+  for (let i = 0; i < str.length; i++) {
+    charCodeSum += str.charCodeAt(i);
+  }
+  const color = colors[charCodeSum % colors.length];
+  
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+    <rect width="100" height="100" fill="${encodeURIComponent(color)}"/>
+    <text x="50" y="55" font-family="sans-serif" font-size="40" font-weight="bold" fill="%23ffffff" text-anchor="middle" dominant-baseline="middle">${firstLetter}</text>
+  </svg>`;
+  return `data:image/svg+xml;utf8,${svg}`;
+};
 
 function Profiles() {
   const navigate = useNavigate();
@@ -92,7 +109,7 @@ function Profiles() {
                     alt={p.profileName} 
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(p.profileName || 'User')}`;
+                      e.target.src = getInitialsAvatar(p.profileName);
                     }}
                     className="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-xl border-2 border-transparent group-hover:border-[#C84B31] transition-all shadow-xl group-hover:scale-105"
                   />
