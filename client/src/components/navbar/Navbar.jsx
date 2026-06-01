@@ -110,6 +110,10 @@ function Navbar() {
                 <img 
                   src={activeProfile.avatar} 
                   alt={activeProfile.profileName} 
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(activeProfile.profileName || 'User')}`;
+                  }}
                   className="w-7 h-7 sm:w-8 sm:h-8 rounded-md object-cover border border-stone-200 group-hover:border-[#C84B31] transition-colors"
                 />
               </button>

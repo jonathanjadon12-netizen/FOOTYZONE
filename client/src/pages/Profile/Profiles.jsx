@@ -5,19 +5,19 @@ import { Plus, Trash2, Smile, Lock, HelpCircle, X } from 'lucide-react';
 
 const AVATAR_OPTIONS = [
   {
-    url: 'https://imgs.search.brave.com/O3uxkwM6KSSb5biG3U8CN06PSAUpOa7reCQtWyKH4Xg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/Mzc1L3RodW1iLTM1/MC0zNzUxODgud2Vi/cA'
+    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Felix'
   },
   {
-    url: 'https://imgs.search.brave.com/Ki2zUi_0AchRdHLzMxTpHcd8PtvnaE4KFzNz7GKPpo0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/Mzc0L3RodW1iLTM1/MC0zNzQ4MDAud2Vi/cA'
+    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka'
   },
   {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Neymar_%28cropped%29.jpg'
+    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jack'
   },
   {
-    url: 'https://imgs.search.brave.com/vbpv2GbSqTmZOIVqxoDujLH6uc3jzeeemuUeOnbvDF0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIx/ODgyNDg5My9waG90/by9zdHV0dGdhcnQt/Z2VybWFueS1sYW1p/bmUteWFtYWwtb2Yt/c3BhaW4tcG9zZXMt/Zm9yLWEtcGhvdG8t/d2l0aC1oaXMtY2Fy/bHNiZXJnLXBsYXll/ci1vZi10aGUuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPVVt/NHNqMDhhUGVqc1dY/dEhXRXhrR05IT0po/b1JpRHhHSHZuWnRx/SUVldkU9'
+    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Milo'
   },
   {
-    url: 'https://imgs.search.brave.com/uv4iDA7-nVOOh40LUGHut3sOObN22t_2ONNlQxL1UGY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI2/NDgxMzExMi9waG90/by9iaXJtaW5naGFt/LWVuZ2xhbmQtam9h/by1wZWRyby1vZi1j/aGVsc2VhLWNlbGVi/cmF0ZXMtc2Nvcmlu/Zy1oaXMtdGVhbXMt/Zm91cnRoLWdvYWwt/YW5kLWhpcy1oYXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWREUXhDTmF1QjZk/MHJjd3VsY0x3UjQ2/Qzk2OEJZY25RVWpH/REQ4M1l4MVk9'
+    url: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luna'
   }
 ];
 
@@ -90,6 +90,10 @@ function Profiles() {
                   <img 
                     src={p.avatar} 
                     alt={p.profileName} 
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(p.profileName || 'User')}`;
+                    }}
                     className="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-xl border-2 border-transparent group-hover:border-[#C84B31] transition-all shadow-xl group-hover:scale-105"
                   />
                   {/* Avatar card select */}
