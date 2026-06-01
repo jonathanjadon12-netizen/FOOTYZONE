@@ -17,6 +17,7 @@ const matchRoutes = require('./routes/matches');
 const profileRoutes = require('./routes/profiles');
 const adminRoutes = require('./routes/admin');
 const videoRoutes = require('./routes/videoRoutes');
+const chatRoutes = require('./routes/chat');
 
 
 const app = express();
@@ -47,6 +48,7 @@ app.use('/api/profiles', profileRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/video', videoRoutes);
 app.use('/api/videos', videoRoutes);
+app.use('/api/chat', chatRoutes);
 
 
 // Health Check API

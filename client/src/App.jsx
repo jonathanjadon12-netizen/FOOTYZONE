@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useApp } from './contexts/AppContext';
+import Chatbot from './components/Chatbot/Chatbot.jsx';
 
 // Reusable custom layout skeleton loader
 const PageLoader = () => (
@@ -46,6 +47,7 @@ const AdminVideos = lazy(() => import('./pages/AdminVideos.jsx'));
 function App() {
   return (
     <div className="min-h-screen bg-[#08080a] text-gray-100 selection:bg-[#e50914] selection:text-white">
+      <Chatbot />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Public Routes */}
