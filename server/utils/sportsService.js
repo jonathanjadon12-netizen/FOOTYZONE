@@ -310,43 +310,43 @@ const countriesData = {
 
 const standingsData = {
   'isl': [
-    { pos: 1, team: 'Mohun Bagan SG', played: 22, wins: 15, draws: 3, losses: 4, points: 48, goalsFor: 47, goalsAgainst: 26 },
-    { pos: 2, team: 'Mumbai City FC', played: 22, wins: 14, draws: 5, losses: 3, points: 47, goalsFor: 42, goalsAgainst: 19 },
-    { pos: 3, team: 'FC Goa', played: 22, wins: 13, draws: 6, losses: 3, points: 45, goalsFor: 39, goalsAgainst: 21 },
-    { pos: 4, team: 'Odisha FC', played: 22, wins: 11, draws: 6, losses: 5, points: 39, goalsFor: 35, goalsAgainst: 23 },
-    { pos: 5, team: 'Kerala Blasters FC', played: 22, wins: 10, draws: 3, losses: 9, points: 33, goalsFor: 32, goalsAgainst: 31 },
-    { pos: 6, team: 'Bengaluru FC', played: 22, wins: 8, draws: 6, losses: 8, points: 30, goalsFor: 26, goalsAgainst: 25 }
+    { pos: 1, team: 'East Bengal FC', played: 13, wins: 8, draws: 2, losses: 3, points: 26, goalsFor: 28, goalsAgainst: 10 },
+    { pos: 2, team: 'Mohun Bagan SG', played: 13, wins: 8, draws: 2, losses: 3, points: 26, goalsFor: 25, goalsAgainst: 12 },
+    { pos: 3, team: 'Mumbai City FC', played: 13, wins: 7, draws: 3, losses: 3, points: 24, goalsFor: 22, goalsAgainst: 14 },
+    { pos: 4, team: 'Bengaluru FC', played: 13, wins: 6, draws: 5, losses: 2, points: 23, goalsFor: 18, goalsAgainst: 12 },
+    { pos: 5, team: 'Jamshedpur FC', played: 13, wins: 6, draws: 4, losses: 3, points: 22, goalsFor: 17, goalsAgainst: 12 },
+    { pos: 6, team: 'Punjab FC', played: 13, wins: 6, draws: 4, losses: 3, points: 22, goalsFor: 19, goalsAgainst: 13 }
   ],
   'premier league': [
-    { pos: 1, team: 'Manchester City', played: 38, wins: 28, draws: 7, losses: 3, points: 91, goalsFor: 96, goalsAgainst: 34 },
-    { pos: 2, team: 'Arsenal', played: 38, wins: 28, draws: 5, losses: 5, points: 89, goalsFor: 91, goalsAgainst: 29 },
-    { pos: 3, team: 'Liverpool', played: 38, wins: 24, draws: 10, losses: 4, points: 82, goalsFor: 86, goalsAgainst: 41 },
-    { pos: 4, team: 'Aston Villa', played: 38, wins: 20, draws: 8, losses: 10, points: 68, goalsFor: 76, goalsAgainst: 61 },
-    { pos: 5, team: 'Tottenham Hotspur', played: 38, wins: 20, draws: 6, losses: 12, points: 66, goalsFor: 74, goalsAgainst: 61 }
+    { pos: 1, team: 'Arsenal', played: 38, wins: 28, draws: 6, losses: 4, points: 90, goalsFor: 85, goalsAgainst: 28 },
+    { pos: 2, team: 'Manchester City', played: 38, wins: 27, draws: 7, losses: 4, points: 88, goalsFor: 92, goalsAgainst: 32 },
+    { pos: 3, team: 'Liverpool', played: 38, wins: 25, draws: 8, losses: 5, points: 83, goalsFor: 88, goalsAgainst: 36 },
+    { pos: 4, team: 'Chelsea', played: 38, wins: 22, draws: 9, losses: 7, points: 75, goalsFor: 78, goalsAgainst: 42 },
+    { pos: 5, team: 'Newcastle United', played: 38, wins: 21, draws: 8, losses: 9, points: 71, goalsFor: 74, goalsAgainst: 45 }
   ],
   'la liga': [
-    { pos: 1, team: 'Real Madrid', played: 38, wins: 29, draws: 8, losses: 1, points: 95, goalsFor: 87, goalsAgainst: 26 },
-    { pos: 2, team: 'FC Barcelona', played: 38, wins: 26, draws: 7, losses: 5, points: 85, goalsFor: 79, goalsAgainst: 44 },
-    { pos: 3, team: 'Girona FC', played: 38, wins: 25, draws: 6, losses: 7, points: 81, goalsFor: 85, goalsAgainst: 46 },
-    { pos: 4, team: 'Atlético Madrid', played: 38, wins: 24, draws: 4, losses: 10, points: 76, goalsFor: 70, goalsAgainst: 43 }
+    { pos: 1, team: 'FC Barcelona', played: 38, wins: 29, draws: 5, losses: 4, points: 92, goalsFor: 91, goalsAgainst: 30 },
+    { pos: 2, team: 'Real Madrid', played: 38, wins: 27, draws: 7, losses: 4, points: 88, goalsFor: 86, goalsAgainst: 28 },
+    { pos: 3, team: 'Villarreal', played: 38, wins: 24, draws: 6, losses: 8, points: 78, goalsFor: 72, goalsAgainst: 40 },
+    { pos: 4, team: 'Atlético Madrid', played: 38, wins: 23, draws: 7, losses: 8, points: 76, goalsFor: 68, goalsAgainst: 38 }
   ]
 };
 
 const topScorersData = {
   'isl': [
-    { name: 'Dimitri Petratos', team: 'Mohun Bagan SG', goals: 10, assists: 7 },
-    { name: 'Jason Cummings', team: 'Mohun Bagan SG', goals: 12, assists: 2 },
-    { name: 'Lallianzuala Chhangte', team: 'Mumbai City FC', goals: 10, assists: 6 }
+    { name: 'Dimitri Petratos', team: 'Mohun Bagan SG', goals: 12, assists: 6 },
+    { name: 'Cleiton Silva', team: 'East Bengal FC', goals: 11, assists: 4 },
+    { name: 'Lallianzuala Chhangte', team: 'Mumbai City FC', goals: 10, assists: 7 }
   ],
   'premier league': [
     { name: 'Erling Haaland', team: 'Manchester City', goals: 27, assists: 5 },
-    { name: 'Cole Palmer', team: 'Chelsea', goals: 22, assists: 11 },
-    { name: 'Alexander Isak', team: 'Newcastle United', goals: 21, assists: 2 }
+    { name: 'Mohamed Salah', team: 'Liverpool', goals: 22, assists: 10 },
+    { name: 'Bukayo Saka', team: 'Arsenal', goals: 19, assists: 11 }
   ],
   'la liga': [
-    { name: 'Artem Dovbyk', team: 'Girona FC', goals: 24, assists: 8 },
-    { name: 'Alexander Sørloth', team: 'Villarreal CF', goals: 23, assists: 6 },
-    { name: 'Robert Lewandowski', team: 'FC Barcelona', goals: 19, assists: 8 }
+    { name: 'Kylian Mbappé', team: 'Real Madrid', goals: 25, assists: 7 },
+    { name: 'Raphinha', team: 'FC Barcelona', goals: 18, assists: 12 },
+    { name: 'Robert Lewandowski', team: 'FC Barcelona', goals: 17, assists: 5 }
   ]
 };
 
