@@ -334,8 +334,8 @@ async function generateOfflineReply(message) {
       `• Goals: **${p.goals}** | Assists: **${p.assists}**\n` +
       `• Discipline: 🟨 **${p.yellowCards || 0}** | 🟥 **${p.redCards || 0}**\n\n` +
       `🏆 **Trophies & Honours:**\n${p.trophies.map(t => `• ${t}`).join('\n')}\n\n` +
-      `📖 **Biography:** ${p.careerStats}\n\n` +
-      `*(Note: Set \`GEMINI_API_KEY\` in your server configuration to enable full conversational AI chats!)*`;
+      `📖 **Biography:** ${p.careerStats}` +
+      (!process.env.GEMINI_API_KEY ? `\n\n*(Note: Set \`GEMINI_API_KEY\` in your server configuration to enable full conversational AI chats!)*` : '');
   }
 
   // 2. Direct Club stats matches
@@ -426,6 +426,6 @@ async function generateOfflineReply(message) {
     `• "Compare Lionel Messi and Cristiano Ronaldo stats"\n` +
     `• "Show Indian Super League (ISL) standings"\n` +
     `• "Show live matchday scores"\n` +
-    `• "Explain counter-pressing (gegenpressing)"\n\n` +
-    `*(Note: Set \`GEMINI_API_KEY\` in your server configuration to enable full conversational AI chats!)*`;
+    `• "Explain counter-pressing (gegenpressing)"` +
+    (!process.env.GEMINI_API_KEY ? `\n\n*(Note: Set \`GEMINI_API_KEY\` in your server configuration to enable full conversational AI chats!)*` : '');
 }
