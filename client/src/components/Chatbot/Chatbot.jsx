@@ -365,12 +365,12 @@ export default function Chatbot() {
                 {!sportsLoading && (
                   <>
                     <h4 className="text-xs font-bold text-[#E25E42] flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                      Simulated Live Scores
+                      <span className="mr-1.5">🏁</span>
+                      Recent Match Scores
                     </h4>
                     
                     {liveData.liveScores.length === 0 ? (
-                      <p className="text-[11px] text-[#A39E93]">No matches currently live.</p>
+                      <p className="text-[11px] text-[#A39E93]">No recent match scores available.</p>
                     ) : (
                       <div className="grid gap-2.5">
                         {liveData.liveScores.map(score => (

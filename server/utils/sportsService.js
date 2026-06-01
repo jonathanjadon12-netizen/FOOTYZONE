@@ -351,9 +351,9 @@ const topScorersData = {
 };
 
 const liveScoresData = [
-  { id: 'live1', home: 'Bengaluru FC', away: 'Kerala Blasters', homeScore: 2, awayScore: 1, minute: '78\'', status: 'Live', league: 'Indian Super League', events: ['Sunil Chhetri 24\' (P)', 'Adrian Luna 41\'', 'Roshan Singh 67\''] },
-  { id: 'live2', home: 'Mohun Bagan SG', away: 'FC Goa', homeScore: 0, awayScore: 0, minute: '34\'', status: 'Live', league: 'Indian Super League', events: [] },
-  { id: 'live3', home: 'Real Madrid', away: 'FC Barcelona', homeScore: 3, awayScore: 2, minute: '90+3\'', status: 'Finished', league: 'La Liga', events: ['Vinícius Jr 18\'', 'Christensen 6\'', 'Fermín López 69\'', 'Lucas Vázquez 73\'', 'Jude Bellingham 90+1\''] }
+  { id: 'live1', home: 'Bengaluru FC', away: 'Kerala Blasters', homeScore: 2, awayScore: 1, minute: 'FT', status: 'Finished', league: 'Indian Super League', events: ['Sunil Chhetri 24\' (P)', 'Adrian Luna 41\'', 'Roshan Singh 67\''] },
+  { id: 'live2', home: 'Mohun Bagan SG', away: 'FC Goa', homeScore: 1, awayScore: 0, minute: 'FT', status: 'Finished', league: 'Indian Super League', events: ['Liston Colaco 52\''] },
+  { id: 'live3', home: 'Real Madrid', away: 'FC Barcelona', homeScore: 3, awayScore: 2, minute: 'FT', status: 'Finished', league: 'La Liga', events: ['Vinícius Jr 18\'', 'Christensen 6\'', 'Fermín López 69\'', 'Lucas Vázquez 73\'', 'Jude Bellingham 90+1\''] }
 ];
 
 const upcomingFixturesData = [
