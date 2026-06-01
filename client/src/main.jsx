@@ -7,7 +7,10 @@ import { AppProvider } from './contexts/AppContext.jsx'
 import './index.css'
 
 // Setup global Axios base URL and interceptors for automated session expiration checks
-const API_URL = import.meta.env.VITE_API_BASE_URL || '';
+let API_URL = import.meta.env.VITE_API_BASE_URL || '';
+if (API_URL.endsWith('/')) {
+  API_URL = API_URL.slice(0, -1);
+}
 axios.defaults.baseURL = API_URL;
 
 axios.interceptors.response.use(
