@@ -143,8 +143,7 @@ RULES FOR RESPONSES
       try {
         const genAI = new GoogleGenerativeAI(apiKey);
         const model = genAI.getGenerativeModel({ 
-          model: 'gemini-1.5-flash',
-          systemInstruction: systemInstruction
+          model: 'gemini-1.5-flash'
         });
 
         // Convert db history to Gemini API format (exclude the newly created user message which will be passed in sendMessage)
@@ -163,7 +162,9 @@ RULES FOR RESPONSES
           }
         });
 
-        const result = await chatSession.sendMessage(message);
+        // Prepend instructions to use the stable v1 API instead of the unstable v1beta endpoint
+        const groundedPrompt = `${systemInstruction}\n\nUser Message:\n${message}`;
+        const result = await chatSession.sendMessage(groundedPrompt);
         assistantReply = result.response.text();
         isMock = false;
       } catch (geminiError) {
