@@ -3,23 +3,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useApp } from '../../contexts/AppContext';
 import { Search, Film, CreditCard, LogOut, ChevronDown, Monitor, Menu, X, Sun, Moon } from 'lucide-react';
 
-const getInitialsAvatar = (name) => {
-  const firstLetter = (name || 'U').charAt(0).toUpperCase();
-  const colors = ['#E25E42', '#C84B31', '#2C3E50', '#18BC9C', '#3498DB', '#9B59B6', '#F1C40F'];
-  let charCodeSum = 0;
-  const str = name || 'User';
-  for (let i = 0; i < str.length; i++) {
-    charCodeSum += str.charCodeAt(i);
-  }
-  const color = colors[charCodeSum % colors.length];
-  
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-    <rect width="100" height="100" fill="${encodeURIComponent(color)}"/>
-    <text x="50" y="55" font-family="sans-serif" font-size="40" font-weight="bold" fill="%23ffffff" text-anchor="middle" dominant-baseline="middle">${firstLetter}</text>
-  </svg>`;
-  return `data:image/svg+xml;utf8,${svg}`;
-};
-
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -129,7 +112,12 @@ function Navbar() {
                   alt={activeProfile.profileName} 
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = getInitialsAvatar(activeProfile.profileName);
+                    const cleanName = activeProfile.profileName || 'User';
+                    const initial = cleanName.charAt(0).toUpperCase();
+                    const colors = ['#E25E42', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'];
+                    const charCodeSum = cleanName.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+                    const color = encodeURIComponent(colors[charCodeSum % colors.length]);
+                    e.target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="${color}"/><text x="50" y="65" font-family="sans-serif" font-weight="bold" font-size="45" fill="white" text-anchor="middle">${initial}</text></svg>`;
                   }}
                   className="w-7 h-7 sm:w-8 sm:h-8 rounded-md object-cover border border-stone-200 group-hover:border-[#C84B31] transition-colors"
                 />

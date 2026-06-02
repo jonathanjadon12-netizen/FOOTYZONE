@@ -5,19 +5,19 @@ import { User, Mail, Key, Eye, EyeOff, AlertCircle } from 'lucide-react';
 
 const AVATAR_OPTIONS = [
   {
-    url: 'https://imgs.search.brave.com/O3uxkwM6KSSb5biG3U8CN06PSAUpOa7reCQtWyKH4Xg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/Mzc1L3RodW1iLTM1/MC0zNzUxODgud2Vi/cA'
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="%23E25E42"/><circle cx="50" cy="40" r="20" fill="white"/><path d="M20 90c0-15 10-25 30-25s30 10 30 25z" fill="white"/></svg>`
   },
   {
-    url: 'https://imgs.search.brave.com/Ki2zUi_0AchRdHLzMxTpHcd8PtvnaE4KFzNz7GKPpo0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/Mzc0L3RodW1iLTM1/MC0zNzQ4MDAud2Vi/cA'
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="%233B82F6"/><circle cx="50" cy="40" r="20" fill="white"/><path d="M20 90c0-15 10-25 30-25s30 10 30 25z" fill="white"/></svg>`
   },
   {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Neymar_%28cropped%29.jpg'
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="%2310B981"/><circle cx="50" cy="40" r="20" fill="white"/><path d="M20 90c0-15 10-25 30-25s30 10 30 25z" fill="white"/></svg>`
   },
   {
-    url: 'https://imgs.search.brave.com/vbpv2GbSqTmZOIVqxoDujLH6uc3jzeeemuUeOnbvDF0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIx/ODgyNDg5My9waG90/by9zdHV0dGdhcnQt/Z2VybWFueS1sYW1p/bmUteWFtYWwtb2Yt/c3BhaW4tcG9zZXMt/Zm9yLWEtcGhvdG8t/d2l0aC1oaXMtY2Fy/bHNiZXJnLXBsYXll/ci1vZi10aGUuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPVVt/NHNqMDhhUGVqc1dY/dEhXRXhrR05IT0po/b1JpRHhHSHZuWnRx/SUVldkU9'
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="%23F59E0B"/><circle cx="50" cy="40" r="20" fill="white"/><path d="M20 90c0-15 10-25 30-25s30 10 30 25z" fill="white"/></svg>`
   },
   {
-    url: 'https://imgs.search.brave.com/uv4iDA7-nVOOh40LUGHut3sOObN22t_2ONNlQxL1UGY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI2/NDgxMzExMi9waG90/by9iaXJtaW5naGFt/LWVuZ2xhbmQtam9h/by1wZWRyby1vZi1j/aGVsc2VhLWNlbGVi/cmF0ZXMtc2Nvcmlu/Zy1oaXMtdGVhbXMt/Zm91cnRoLWdvYWwt/YW5kLWhpcy1oYXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWREUXhDTmF1QjZk/MHJjd3VsY0x3UjQ2/Qzk2OEJZY25RVWpH/REQ4M1l4MVk9'
+    url: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="20" fill="%238B5CF6"/><circle cx="50" cy="40" r="20" fill="white"/><path d="M20 90c0-15 10-25 30-25s30 10 30 25z" fill="white"/></svg>`
   }
 ];
 
@@ -64,7 +64,7 @@ function Signup() {
     setLoading(false);
     
     if (res.success) {
-      navigate('/profiles?new=true');
+      navigate('/profiles');
     } else {
       setError(res.error);
     }
