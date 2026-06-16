@@ -60,8 +60,11 @@ function Watch() {
           // Standard movie fallback check
           try {
             const fallbackRes = await axios.get('/api/matches');
-            const allMovies = fallbackRes.data.data.trending.concat(fallbackRes.data.data.picks);
-            const found = allMovies.find(m => m._id === id);
+            const data = fallbackRes.data?.data || {};
+            const trendingList = data.trending || [];
+            const picksList = data.picks || data.originals || [];
+            const allMovies = trendingList.concat(picksList);
+            const found = allMovies.find(m => m && m._id === id);
             if (found) setMovie(found);
           } catch (e) {
             console.error("All fallback checks failed:", e);

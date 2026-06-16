@@ -23,12 +23,14 @@ function Search() {
   // Gather catalog feed array for query computations
   const getFlattenedCatalog = () => {
     if (!catalogFeed) return [];
-    const movies = catalogFeed.trending.concat(catalogFeed.picks);
+    const trendingList = catalogFeed.trending || [];
+    const picksList = catalogFeed.picks || catalogFeed.originals || [];
+    const movies = trendingList.concat(picksList);
     // Remove duplicates
     const unique = [];
     const seen = new Set();
     movies.forEach(m => {
-      if (!seen.has(m._id)) {
+      if (m && m._id && !seen.has(m._id)) {
         seen.add(m._id);
         unique.push(m);
       }

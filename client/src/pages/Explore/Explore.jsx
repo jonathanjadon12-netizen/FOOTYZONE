@@ -16,13 +16,15 @@ function Explore() {
   // Load catalog list
   useEffect(() => {
     if (!catalogFeed) return;
-    const all = catalogFeed.trending.concat(catalogFeed.picks);
+    const trendingList = catalogFeed.trending || [];
+    const picksList = catalogFeed.picks || catalogFeed.originals || [];
+    const all = trendingList.concat(picksList);
     
     // Remove duplicates
     const unique = [];
     const seen = new Set();
     all.forEach(m => {
-      if (!seen.has(m._id)) {
+      if (m && m._id && !seen.has(m._id)) {
         seen.add(m._id);
         unique.push(m);
       }
