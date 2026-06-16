@@ -67,16 +67,29 @@ exports.getMatchById = async (req, res, next) => {
 // Advanced HTTP 206 Byte-Range Streaming Engine Proxy
 exports.streamMatch = async (req, res, next) => {
   try {
-    const match = await Match.findById(req.params.id);
+    let match = await Match.findById(req.params.id);
     if (!match) {
-      return res.status(404).json({ status: 'fail', message: 'Video asset not found.' });
+      // Fallback: try looking up in the Video collection in case this was requested via a Video ID
+      const Video = require('../config/models/Video');
+      const video = await Video.findById(req.params.id);
+      if (video) {
+        match = {
+          videoURL: video.videoUrl,
+          title: video.title
+        };
+      }
+    }
+
+    if (!match) {
+      return res.status(404).json({ status: "fail", message: "Video asset not found." });
     }
 
     const videoUrl = match.videoURL;
-    const range = req.headers.range;
+    let range = req.headers.range;
 
     if (!range) {
-      return res.status(400).json({ status: 'fail', message: 'Range header missing. Requires byte-range stream.' });
+      // Default to streaming the first chunk if range is missing, to satisfy browser capability probing requests.
+      range = 'bytes=0-';
     }
 
     // Make an HTTP request to get the file size first or proxy request segments
